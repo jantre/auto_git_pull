@@ -36,14 +36,14 @@ touch $LOCK_FILE
 # Check if the log file exists
 if [ ! -f $LOG_FILE ]
 then
- echo "WARNING: $LOG_FILE DOES NOT EXIST\n"| tee $LOG_FILE
+ echo "$LOG_FILE DOES NOT EXIST\n"| tee $LOG_FILE
  exit 1
 fi
 
 # Check if the log file is writeable
 if [ ! -w $LOG_FILE ]
 then
- echo "WARNING: `whoami` DOES NOT HAVE WRITE ACCESS TO $LOG_FILE\n" | tee $LOG_FILE
+ echo "`whoami` DOES NOT HAVE WRITE ACCESS TO $LOG_FILE\n" | tee $LOG_FILE
  exit 1
 fi
 
